@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sieyana Kabra — Digital Marketing Strategist</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #FAF7F2;
+    --dark: #1A1A1A;
+    --accent: #C4773B;
+    --accent-light: #F0E0D0;
+    --muted: #6B6560;
+    --border: #E8E0D5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250, 247, 242, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-family: 'Arial', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-tag {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: normal;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-bio {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--dark);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--accent); }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--dark);
+    color: var(--dark);
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { background: var(--dark); color: var(--cream); }
+
+  .hero-image-wrap {
+    position: relative;
+  }
+
+  .hero-image-wrap::before {
+    content: '';
+    position: absolute;
+    top: 20px; left: 20px;
+    right: -20px; bottom: -20px;
+    border: 1px solid var(--border);
+    z-index: 0;
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+    z-index: 1;
+    display: block;
+    background: var(--accent-light);
+  }
+
+  .hero-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--accent-light) 0%, #E8D5C4 100%);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-item {}
+
+  .stat-num {
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-num {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: normal;
+    letter-spacing: -0.02em;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-family: 'Arial', sans-serif;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-aside {}
+
+  .aside-block {
+    border-left: 2px solid var(--accent);
+    padding: 1rem 0 1rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .aside-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .aside-value {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    color: var(--dark);
+  }
+
+  /* EXPERIENCE */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .exp-meta {
+    font-family: 'Arial', sans-serif;
+  }
+
+  .exp-company {
+    font-size: 0.82rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .exp-date {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .exp-body {}
+
+  .exp-role {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+    font-weight: normal;
+  }
+
+  .exp-desc {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .exp-metric {
+    display: inline-block;
+    margin-top: 0.8rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-family: 'Arial', sans-serif;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.8rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    border: 1px solid var(--border);
+    padding: 2rem;
+    background: white;
+  }
+
+  .skill-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-card-title {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-tag {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  /* WORK / PORTFOLIO */
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .work-card {
+    border: 1px solid var(--border);
+    background: white;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+
+  .work-thumb {
+    width: 100%;
+    height: 200px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+
+  .work-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work-info {
+    padding: 1.5rem;
+  }
+
+  .work-type {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .work-title {
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin-bottom: 0.6rem;
+  }
+
+  .work-desc {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .testimonial {
+    border: 1px solid var(--border);
+    padding: 2rem;
+    background: white;
+    position: relative;
+  }
+
+  .testimonial::before {
+    content: '\201C';
+    font-size: 4rem;
+    color: var(--accent-light);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+    font-family: Georgia, serif;
+  }
+
+  .testimonial-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.82rem;
+  }
+
+  .author-name {
+    font-weight: bold;
+    color: var(--dark);
+  }
+
+  .author-role {
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  /* BEYOND */
+  .beyond-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .beyond-text p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+
+  .beyond-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fact-item {
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    background: white;
+  }
+
+  .fact-emoji {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .fact-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.87rem;
+    color: var(--muted);
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 6rem 2rem;
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .contact-heading {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: normal;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-heading em { color: var(--accent); font-style: italic; }
+
+  .contact-sub {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    opacity: 0.7;
+    line-height: 1.8;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--cream);
+    font-family: 'Arial', sans-serif;
+    font-size: 0.92rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    background: rgba(196,119,59,0.1);
+  }
+
+  .contact-link-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .contact-link-label {
+    opacity: 0.6;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.06em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.75rem; }
+    .hero { padding: 5rem 1rem 3rem; }
+    .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-image-wrap { order: -1; max-width: 320px; margin: 0 auto; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .work-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .beyond-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    section { padding: 4rem 1rem; }
+    .stats-row { gap: 1.5rem; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Sieyana Kabra</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div>
+      <p class="hero-tag">Digital Marketing Strategist</p>
+      <h1>Making brands <em>impossible</em> to ignore</h1>
+      <p class="hero-bio">MSc Digital Marketing · Newcastle University<br>
+      SEO · Social Media · Campaigns that actually convert</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn-primary">See My Work</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-num">70%</span>
+          <span class="stat-label">Follower Growth</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">16K+</span>
+          <span class="stat-label">Viral Reel Views</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Brands Scaled</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-photo-placeholder">Photo</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About Me</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a digital marketer who turns scroll-stopping content into engagement gold — and yes, I have the analytics to prove it.</p>
+      <p>Armed with an MSc in Digital Marketing from Newcastle University and a track record of making algorithms work overtime, I specialise in social media strategy, SEO, and campaigns that actually convert.</p>
+      <p>When I'm not analysing metrics or debating the perfect posting time, I'm probably designing something in Canva, hunting for the next trending audio, or convincing brands that yes, they do need another Instagram Reel.</p>
+      <p>Currently based in Newcastle upon Tyne and open to opportunities that involve creativity, data, and the occasional gif. Let's make your brand impossible to ignore.</p>
+    </div>
+    <div class="about-aside">
+      <div class="aside-block">
+        <p class="aside-label">Education</p>
+        <p class="aside-value">MSc Digital Marketing<br>Newcastle University</p>
+      </div>
+      <div class="aside-block">
+        <p class="aside-label">Location</p>
+        <p class="aside-value">Newcastle upon Tyne, UK<br>Open to Remote</p>
+      </div>
+      <div class="aside-block">
+        <p class="aside-label">Email</p>
+        <p class="aside-value"><a href="mailto:kabrasieyana@gmail.com" style="color: var(--accent); text-decoration: none;">kabrasieyana@gmail.com</a></p>
+      </div>
+      <div class="aside-block">
+        <p class="aside-label">Instagram</p>
+        <p class="aside-value"><a href="https://instagram.com/_sieyanaa" target="_blank" style="color: var(--accent); text-decoration: none;">@_sieyanaa</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+  </div>
+  <div class="exp-list">
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-company">Nucha</p>
+        <p class="exp-date">Current</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-role">Marketing & Development Intern</p>
+        <p class="exp-desc">Brewing marketing magic — turning brand strategies into scroll-stopping campaigns and driving measurable growth across digital channels.</p>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-company">Subverse</p>
+        <p class="exp-date">Previous</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-role">Social Media Marketer</p>
+        <p class="exp-desc">Developed content strategy and community management initiatives that drove significant audience engagement across platforms.</p>
+        <span class="exp-metric">↑ 35% Engagement</span>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-company">Aprameya</p>
+        <p class="exp-date">Previous</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-role">Social Media Strategist</p>
+        <p class="exp-desc">Managed social media presence for multiple clients, delivering tailored content strategies and personal branding solutions that produced outstanding follower growth.</p>
+        <span class="exp-metric">↑ 60% Follower Spike</span>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-company">Sneakarc</p>
+        <p class="exp-date">Previous</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-role">Digital Marketing Executive</p>
+        <p class="exp-desc">Rode trend waves and implemented data-driven content strategies to dramatically increase brand visibility and reach.</p>
+        <span class="exp-metric">↑ 50% More Impressions</span>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-company">Bichawat</p>
+        <p class="exp-date">Previous</p>
+      </div>
+      <div class="exp-body">
+        <p class="exp-role">Video-First Content Strategist</p>
+        <p class="exp-desc">Led video-first content strategy, creating compelling Reels and short-form video content that dramatically lifted engagement metrics.</p>
+        <span class="exp-metric">↑ 42% Engagement Uplift</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Skills & Tools</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-icon">📈</div>
+      <h3 class="skill-card-title">Digital Marketing</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">SEO</span>
+        <span class="skill-tag">SEM</span>
+        <span class="skill-tag">PPC</span>
+        <span class="skill-tag">Google Ads</span>
+        <span class="skill-tag">Meta Ads</span>
+        <span class="skill-tag">Campaign Optimisation</span>
+        <span class="skill-tag">Growth Strategy</span>
+        <span class="skill-tag">Google Analytics</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">📱</div>
+      <h3 class="skill-card-title">Social Media</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Content Strategy</span>
+        <span class="skill-tag">Community Management</span>
+        <span class="skill-tag">Trend Analysis</span>
+        <span class="skill-tag">Algorithm Optimisation</span>
+        <span class="skill-tag">Content Calendars</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">🎨</div>
+      <h3 class="skill-card-title">Creative</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">Adobe InDesign</span>
+        <span class="skill-tag">CorelDRAW</span>
+        <span class="skill-tag">Video Editing</span>
+        <span class="skill-tag">Notion</span>
+        <span class="skill-tag">Microsoft Suite</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">📊</div>
+      <h3 class="skill-card-title">Analytics</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Data Analysis</span>
+        <span class="skill-tag">KPI Tracking</span>
+        <span class="skill-tag">Performance Reporting</span>
+        <span class="skill-tag">A/B Testing</span>
+        <span class="skill-tag">Cross-Functional Collaboration</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Selected Work</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-thumb" style="background: #1A1A1A; color: #C4773B;">
+        <span style="font-size:2rem;">▶</span>
+      </div>
+      <div class="work-info">
+        <p class="work-type">Viral Content</p>
+        <h3 class="work-title">Reel That Hit 16,000+ Views</h3>
+        <p class="work-desc">Created and published an Instagram Reel that went viral, reaching over 16,000 organic views and significantly boosting account visibility and follower count.</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb" style="background: #2C2C2C;">
+        <span style="font-size:2rem; color: #C4773B;">🚂</span>
+      </div>
+      <div class="work-info">
+        <p class="work-type">Print Design</p>
+        <h3 class="work-title">Mumbai Train Station Poster</h3>
+        <p class="work-desc">Designed a poster for a college committee that was selected for display at a train station in Mumbai, India — reaching thousands of daily commuters.</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb" style="background: #F0E0D0;">
+        <span style="font-size:2rem;">👤</span>
+      </div>
+      <div class="work-info">
+        <p class="work-type">Account Management</p>
+        <h3 class="work-title">25% Follower Growth in 30 Days</h3>
+        <p class="work-desc">Managed a personal brand account and executed a targeted content strategy that delivered a 25% increase in followers within a single month.</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-thumb" style="background: #E8D5C4;">
+        <span style="font-size:2rem;">📲</span>
+      </div>
+      <div class="work-info">
+        <p class="work-type">Feed Curation</p>
+        <h3 class="work-title">Instagram Feed Management</h3>
+        <p class="work-desc">Handled end-to-end Instagram feed management for multiple brand accounts — from content creation and scheduling to community engagement and performance analysis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">What People Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <p class="testimonial-text">Sieyana handled all responsibilities for content design, creation, and managing the social media of our brand. She has shown great responsibility, sincerity, and a genuine willingness to learn. Her coordination skills, communication skills and attention to detail are par excellence.</p>
+      <div class="testimonial-author">
+        <p class="author-name">Arpit Arora</p>
+        <p class="author-role">Co-Founder, Sneakarc</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">Sieyana's dedication and talent were clear from the start. She quickly became an invaluable team member, consistently exceeding expectations. Her ability to develop effective social media strategies, coupled with her strong understanding of personal branding, made her a standout performer.</p>
+      <div class="testimonial-author">
+        <p class="author-name">Antara Chedda</p>
+        <p class="author-role">Executive, Aprameya</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BEYOND WORK -->
+<section id="beyond">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Beyond Work</h2>
+  </div>
+  <div class="beyond-grid">
+    <div class="beyond-text">
+      <p>Before I became a metrics-obsessed marketing nerd, I was designing book covers for Amazon sellers — yes, judging books by their covers is literally a skill.</p>
+      <p>I also ran a baking YouTube channel where I convinced people that buttercream roses were totally achievable. Spoiler: they weren't, but I had fun trying.</p>
+      <p>Now I'm a full-time globetrotter who once packed up and moved to an entirely new country for my Master's with exactly zero friends, zero plan, and 100% audacity. Comfort zones? Never heard of her.</p>
+    </div>
+    <div class="beyond-facts">
+      <div class="fact-item">
+        <span class="fact-emoji">✈️</span>
+        <p class="fact-text">Moved countries solo for my Master's with zero plan and 100% audacity</p>
+      </div>
+      <div class="fact-item">
+        <span class="fact-emoji">📚</span>
+        <p class="fact-text">Designed book covers for Amazon sellers</p>
+      </div>
+      <div class="fact-item">
+        <span class="fact-emoji">🎂</span>
+        <p class="fact-text">Ran a baking YouTube channel — buttercream roses included</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-heading">Let's make your brand <em>impossible</em> to ignore</h2>
+      <p class="contact-sub">Open to full-time roles, freelance projects, and collaborations that involve creativity, data, and the occasional gif.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:kabrasieyana@gmail.com" class="contact-link">
+        <div class="contact-link-icon">✉</div>
+        <div>
+          <span class="contact-link-label">Email</span>
+          kabrasieyana@gmail.com
+        </div>
+      </a>
+      <a href="https://instagram.com/_sieyanaa" target="_blank" class="contact-link">
+        <div class="contact-link-icon">📷</div>
+        <div>
+          <span class="contact-link-label">Instagram</span>
+          @_sieyanaa
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/sieyana-kabra" target="_blank" class="contact-link">
+        <div class="contact-link-icon">in</div>
+        <div>
+          <span class="contact-link-label">LinkedIn</span>
+          Sieyana Kabra Resume
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Sieyana Kabra · Digital Marketing Strategist
+</footer>
+
+</body>
+</html>
